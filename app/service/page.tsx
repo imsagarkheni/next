@@ -9,12 +9,54 @@ type User = {
   _id: string;
   display_name: string;
   event_type: string;
-  personaldetail: object
+  personaldetail: Personaldetail;
   is_approved: boolean;
-  aboutplace: object;
+  aboutplace: Aboutplace;
   ratings:string;
-  capacity:object;
+  capacity:Capacity;
 };
+type  Capacity= {
+  city:         string;
+  state:        string;
+  pincode:      string;
+  address:      string;
+  location:     Location;
+  flat_no?:     string;
+  street_name?: string;
+  area_name?:   string;
+};
+type Aboutplace= {
+  banner:           string;
+  place_price:      string;
+  price_type:       string;
+  max_day:          null;
+  clearing_time:    string;
+  person_capacity:  string;
+  parking_capacity: string;
+  details:          string;
+}
+ type Personaldetail ={
+  professional_skill: string;
+  full_name:          string;
+  country_code:       string;
+  mobile:             string;
+  is_mobile_hidden:   boolean;
+  alt_mobile_no:      string;
+  alt_mobile_hidden:  string;
+  email:              string;
+  is_email_hidden:    boolean;
+  banner:             string;
+  price:              number | string;
+  price_type:         string;
+  max_day:            number | null | string;
+  clearing_time:      number | string;
+  flat_no:            string;
+  street:             string;
+  area:               string;
+  city:               string;
+  state:              string;
+  pincode:            string;
+}
 
 const Star: FC<User> = ({ ratings }) => {
   const numberRating = Number(ratings);
@@ -115,7 +157,7 @@ const UserCard: FC<User> = ({ display_name, event_type, is_approved, personaldet
               <div className="flex items-center space-x-1 max-[820px]:space-x-2">
                 {/* <Star ratings={data?.ratings} /> */}
                 <span className="text-quicksilver text-xs font-bold pl-2">
-                  <Star ratings={ratings}/> RATINGS
+                  {/* <Star ratings={ratings}/> RATINGS */}
                 </span>
               </div>
             </div>

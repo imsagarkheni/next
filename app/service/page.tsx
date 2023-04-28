@@ -4,7 +4,6 @@ import axios from 'axios';
 import Navbar from '../components/Navbar';
 import { toast, ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-import demoimage from ''
 
 type User = {
   _id: string;
